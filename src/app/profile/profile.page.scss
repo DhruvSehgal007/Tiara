@@ -1,0 +1,97 @@
+//header
+ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
+  box-shadow: 0px 0px 0px 0px !important;
+}
+
+.headertoolbar {
+  --background: #fdfbe4;
+}
+.header p {
+  margin-bottom: 0px;
+  position: absolute;
+  right: 10px;
+  top: 6px;
+}
+
+.header {
+  margin: 0px 20px 0px 20px;
+  position: relative;
+  text-align: center;
+}
+i.fa-solid.fa-angle-left {
+  color: #ffffff;
+  background: black;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  position: absolute;
+  top: 5px;
+}
+ion-content.md.content-ltr.hydrated {
+  --background: black;
+}
+//header
+.profile_screen {
+  padding: 20px;
+}
+
+.profileion {
+  --background: #fdfbe4 !important;
+}
+.profile-area {
+  text-align: center;
+  padding-top: 10px;
+}
+p.name {
+  color: black;
+  font-family: railway;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  margin-top: 18px;
+}
+p.mail {
+  color: black;
+  font-size: 10px;
+  margin-bottom: 0px;
+  font-weight: 200;
+}
+
+.profileoptions {
+  background: #f1c27d;
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 60%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.options {
+  background: #fdfbe4;
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 10px 14px 10px 14px;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+
+p.optionstwo {
+  color: black;
+  margin-bottom: 0px;
+  font-family: "railway";
+  font-size: 15px;
+  font-weight: 600;
+  padding-left: 14px;
+}
+
+.optionsthree {
+  color: black;
+  position: absolute;
+  right: 14px;
+}

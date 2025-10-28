@@ -1,0 +1,29 @@
+.time-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  .picker-column {
+    max-height: 200px;
+    overflow-y: scroll;
+    // scroll-snap-type: y mandatory;
+    width: 80px;
+    text-align: center;
+       &::-webkit-scrollbar {
+      display: none;              /* Chrome, Safari, Opera */
+    }
+ 
+    div {
+      padding: 12px 0;
+      scroll-snap-align: center;
+      font-size: 1.2em;
+      color: gray;
+      transition: color 0.2s;
+ 
+      &.selected {
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+}

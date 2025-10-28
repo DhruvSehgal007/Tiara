@@ -1,0 +1,191 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="headertoolbar">
+    <div class="header">
+      <i class="fa-solid fa-angle-left" (click)="ondevice()"></i>
+      <img
+        class="icons-image"
+        src="../../assets/mainimages/Tiara_black_logo.svg"
+        alt="Pending"
+      />
+      <p>Cancel</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <section class="mode">
+    <div *ngFor="let mode of modes; let i = index" class="modediv">
+      <div class="hours">
+        <p class="modetype">Mode {{ i + 1 }}</p>
+        <p class="modehours">
+          {{ formatTime(mode.data.startHour, mode.data.startMinute) }} - {{
+          formatTime(mode.data.endHour, mode.data.endMinute) }}
+        </p>
+        <p class="modestatus">
+          {{ mode.data.enabled ? 'Enabled' : 'Disabled' }}
+        </p>
+      </div>
+
+      <div class="runstop" (click)="openModal(i)">
+        <div class="rundiv">
+          <p class="run">Run</p>
+          <p class="runsec">{{ mode.data.runTime }}s</p>
+        </div>
+        <div class="stopdiv">
+          <p class="stop">Stop</p>
+          <p class="stopsec">{{ mode.data.stopTime }}s</p>
+        </div>
+      </div>
+
+      <div class="toggle">
+        <div
+          class="toggle-switch"
+          [class.active]="mode.data.enabled"
+          (click)="toggleMode(i)"
+        >
+          <div class="switch-handle"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL -->
+    <div class="custom-modal" *ngIf="isModalOpen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <i class="fa-solid fa-xmark" (click)="closeModal()"></i>
+          <p class="editmodetext">Edit Mode {{ currentEditIndex + 1 }}</p>
+          <i class="fa-solid fa-check" (click)="saveChanges()"></i>
+        </div>
+
+        <!-- WEEKLY SELECTION -->
+        <div class="forwhite">
+          <div class="tags">
+            <img
+              class="WSicons"
+              src="../../assets/mainimages/weekdays.svg"
+              alt="Pending"
+            />
+            <p>Weekly setting</p>
+          </div>
+          <div class="weekdays">
+            <button
+              *ngFor="let day of weekDays"
+              [ngClass]="{ 'active': selectedDays.includes(day) }"
+              (click)="toggleDay(day)"
+              class="aa"
+            >
+              {{ day }}
+            </button>
+          </div>
+        </div>
+        <!-- /WEEKLY SELECTION -->
+
+        <!-- TIME SETTING -->
+        <div class="forwhitesecond">
+          <div class="tags settingss">
+            <img
+              class="WSicons"
+              src="../../assets/mainimages/clock.svg"
+              alt="Clock"
+            />
+            <p>Time setting</p>
+          </div>
+
+          <div class="fortime">
+            <div class="fortimetwo">
+              <div class="twodiv">
+                <div class="swiper-wrapper-container forhourborder">
+                  <div class="swiper-container start-hour">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" *ngFor="let h of hours">
+                        {{ h }}
+                      </div>
+                    </div>
+                  </div>
+                  <p class="colun">:</p>
+                  <div class="swiper-container start-minute">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" *ngFor="let m of minutes">
+                        {{ m }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vizor"></div>
+                </div>
+
+                <div class="swiper-wrapper-container forhourborder">
+                  <div class="swiper-container end-hour">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" *ngFor="let h of hours">
+                        {{ h }}
+                      </div>
+                    </div>
+                  </div>
+                  <p class="colun">:</p>
+                  <div class="swiper-container end-minute">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" *ngFor="let m of minutes">
+                        {{ m }}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="vizor2"></div>
+                </div>
+              </div>
+              <div class="parat">
+                <p>From</p>
+                <p>To</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FREQUENCY SETTING -->
+        <div class="forwhitesecond">
+          <div class="tags settingss">
+            <img
+              class="WSicons"
+              src="../../assets/mainimages/clock.svg"
+              alt="Clock"
+            />
+            <p>Frequency setting</p>
+          </div>
+
+          <!-- <div class="parat">
+          <p>Start Time</p>
+          <p>End Time</p>
+        </div> -->
+          <div class="forgreq">
+            <div class="divforsec">
+              <div class="swiper-wrapper-container forsecondborder">
+                <div class="swiper-container run-seconds">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let s of seconds">
+                      {{ s }} s
+                    </div>
+                  </div>
+                </div>
+                <div class="vizor3"></div>
+              </div>
+
+              <div class="swiper-wrapper-container forsecondborder">
+                <div class="swiper-container stop-seconds">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" *ngFor="let s of seconds">
+                      {{ s }} s
+                    </div>
+                  </div>
+                </div>
+                <div class="vizor4"></div>
+              </div>
+            </div>
+            <div class="parat">
+              <p>On</p>
+              <p>Pause</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ion-content>

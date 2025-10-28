@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="headertoolbar">
+    <div class="header">
+    <i class="fa-solid fa-angle-left"></i>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ioncontentlogin">
+  
+
+      <section class="loginscreen">
+      <div class="logodivimage">
+  <img class="icons-image" src="../../assets/mainimages/Tiara_full.png"alt="Pending"/>
+       </div>
+
+       <div class="welcometext">
+<p class="pone">Welcome to Tiara</p>
+<p class="ptwo">login to your account</p>
+
+       </div>
+
+
+       <div class="inputfields">
+
+        <div class="input-group">
+  <i class="fas fa-user icon"></i>
+  <input
+    type="text"
+    placeholder="Full Name"
+    [(ngModel)]="name"
+  />
+</div>
+<div class="input-group">
+  <i class="fas fa-shield-alt icon"></i>
+  <input
+    [type]="passwordVisible ? 'text' : 'password'"
+    placeholder="********"
+    [(ngModel)]="password"
+  />
+  <i
+    class="fas toggle-eye"
+    [ngClass]="passwordVisible ? 'fa-eye-slash' : 'fa-eye'"
+    (click)="togglePasswordVisibility()"
+  ></i>
+</div>
+
+       </div>
+
+
+
+
+       <div class="remforget">
+
+        <div class="rem">
+          <i class="fa-solid fa-check"></i>
+          <p>Remember Me</p>
+        </div>
+
+        <div class="forget">
+          <p>Forgot Password</p>
+        </div>
+
+       </div>
+
+
+<!-- Existing content -->
+
+<div class="forbtn">
+<div class="loginbtn">
+  <!-- <ion-button expand="block" (click)="onLoginClick()">Login</ion-button> -->
+  <ion-button expand="block" (click)="onhome()">Login</ion-button>
+  <p *ngIf="errorMessage" class="error-text">{{ errorMessage }}</p>
+  <p>Don't have an account yet? Registration</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+      </section>
+
+ 
+</ion-content>

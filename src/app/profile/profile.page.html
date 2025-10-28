@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="headertoolbar">
+    <div class="header">
+      <i class="fa-solid fa-angle-left"></i>
+      <img
+        class="icons-image"
+        src="../../assets/mainimages/Tiara_black_logo.svg"
+        alt="Pending"
+      />
+      <p>Cancel</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="profileion">
+  <section class="profile_screen">
+    <div class="profile-area">
+      <img
+        class="icons-image"
+        src="../../assets/mainimages/profile.png"
+        alt="Pending"
+      />
+      <p class="name">Marie T wiedman</p>
+      <p class="mail">Mariegmail.com</p>
+    </div>
+  </section>
+
+  <div class="profileoptions">
+    <div class="options" (click)="onEditProfile()">
+      <img
+        class="optionsone"
+        src="../../assets/mainimages/Vector.svg"
+        alt="Pending"
+      />
+      <p class="optionstwo">User Profile</p>
+      <i class="fa-solid fa-angle-right optionsthree"></i>
+    </div>
+    <div class="options" (click)="onChangePassword()">
+      <img
+        class="optionsone"
+        src="../../assets/mainimages/change_psd.svg"
+        alt="Pending"
+      />
+      <p class="optionstwo">Change Password</p>
+      <i class="fa-solid fa-angle-right optionsthree"></i>
+    </div>
+    <div class="options">
+      <img
+        class="optionsone"
+        src="../../assets/mainimages/Group 66.svg"
+        alt="Pending"
+      />
+      <p class="optionstwo">Push Notifications</p>
+      <i class="fa-solid fa-angle-right optionsthree"></i>
+    </div>
+    <div class="options" (click)="onDeleteAcoount()">
+      <img
+        class="optionsone"
+        src="../../assets/mainimages/change_psd.svg"
+        alt="Pending"
+      />
+      <p class="optionstwo">Delete Account</p>
+      <i class="fa-solid fa-angle-right optionsthree"></i>
+    </div>
+    <div class="options">
+      <img
+        class="optionsone"
+        src="../../assets/mainimages/Group 66.svg"
+        alt="Pending"
+      />
+      <p class="optionstwo">Logout</p>
+      <i class="fa-solid fa-angle-right optionsthree"></i>
+    </div>
+  </div>
+</ion-content>

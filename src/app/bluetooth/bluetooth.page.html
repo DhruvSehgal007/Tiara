@@ -1,0 +1,72 @@
+<h2>Bluetooth Scanner</h2>
+
+<!-- SCAN BUTTON -->
+<button (click)="scanDevices()" style="background: red; color: white; padding: 10px; position: absolute; top: 60px;">
+  Scan for Devices
+</button>
+
+<!-- DEVICE LIST -->
+<ul *ngIf="!connected" style="margin-top: 120px;">
+  <li *ngFor="let device of devices" (click)="connectToDevice(device)" style="padding: 10px; cursor: pointer; border: 1px solid #ccc; margin-top: 5px;">
+    {{ device.device.name || 'Unnamed' }} - {{ device.device.deviceId }}
+  </li>
+</ul>
+
+<!-- CONTROL PANEL -->
+<div *ngIf="connected" style="margin-top: 30px;">
+  <h3>Controls</h3>
+
+
+<button (click)="goToWorkingMode()" style="margin-top: 20px; background: #3c40c6; color: white; padding: 10px;">
+  Working Mode Page
+</button>
+
+<label>
+  <input type="checkbox" (change)="onDevicePowerToggle($event)" />
+  Device Power
+</label><br /><br />
+
+  <!-- LIGHT -->
+  <label>
+   <input type="checkbox" (change)="onLightToggle($event)" />
+
+    Ambient Light
+  </label><br /><br />
+
+  <!-- LOCK -->
+  <label>
+<input type="checkbox" (change)="onLockToggle($event)" />
+    Lock
+  </label><br /><br />
+
+  <!-- FAN -->
+  <label>
+<input type="checkbox" (change)="onFanToggle($event)" />
+    Fan
+  </label><br /><br />
+
+  <!-- PUMP -->
+  <label>
+<input type="checkbox" (change)="onPumpToggle($event)" />
+    Pump
+  </label><br /><br />
+
+  <!-- CHANNEL -->
+  <label>
+    <input type="radio" name="channel" (change)="selectChannel(true)" /> M1
+  </label>
+  <label>
+    <input type="radio" name="channel" (change)="selectChannel(false)" /> M2
+  </label>
+
+  <label>
+  Fan Speed:
+  <select (change)="onFanSpeedChange($event)">
+    <option value="0">Off</option>
+    <option value="1">Low</option>
+    <option value="2">Medium</option>
+    <option value="3">High</option>
+  </select>
+</label>
+<br /><br />
+</div>

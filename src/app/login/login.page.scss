@@ -1,0 +1,168 @@
+//header
+ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
+  box-shadow: 0px 0px 0px 0px !important;
+}
+
+.headertoolbar {
+  --background: #fdfbe4;
+}
+.header {
+  margin: 0px 20px 0px 20px;
+}
+i.fa-solid.fa-angle-left {
+  color: white;
+  background: black;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+//header
+
+.ioncontentlogin {
+  --background: #fdfbe4;
+}
+.logodivimage {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.welcometext {
+  text-align: center;
+}
+p.pone {
+  color: #000000;
+  font-family: railway;
+  font-size: 35px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+p.ptwo {
+  color: #000000;
+  font-family: railway;
+  font-size: 20px;
+  font-weight: 100 !important;
+  margin-bottom: 0px;
+}
+
+//
+
+/* You can add this in your component's .scss or global.scss */
+.input-group {
+  position: relative;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 40px 10px 40px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #ffffff00;
+  font-size: 17px;
+  outline: none;
+  border-radius: 8px !important;
+  font-family: "railway";
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.input-group .icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+  font-size: 18px;
+}
+
+.input-group .toggle-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+  font-size: 18px;
+  cursor: pointer;
+}
+.inputfields {
+  padding: 0px 20px 0px 20px;
+}
+//
+
+i.fa-solid.fa-check {
+  color: white;
+  background: #000000;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.rem p {
+  margin-bottom: 0px;
+  color: black;
+  font-size: 13px;
+  font-family: "railway";
+  padding-left: 7px;
+}
+.rem {
+  display: flex;
+}
+.forget p {
+  margin-bottom: 0px;
+  color: black;
+  font-size: 13px;
+  font-family: "railway";
+}
+.remforget {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 0px 20px;
+}
+
+.loginbtn p {
+  color: #000000;
+  font-size: 13px;
+  font-family: "railway";
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.loginbtn ion-button {
+  --background: linear-gradient(
+    90deg,
+    #b4880f 0%,
+    #fce46d 40%,
+    #fce46d 60%,
+    #b4880f 100%
+  );
+  font-family: "raleway";
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+}
+
+.forbtn {
+  position: fixed;
+  bottom: 28px;
+  width: 100%;
+  padding: 0px 20px 2px 20px;
+  text-align: center;
+}
+.logodivimage img {
+    width: 50%;
+}

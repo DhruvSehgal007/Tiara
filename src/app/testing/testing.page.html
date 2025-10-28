@@ -1,0 +1,41 @@
+
+<!-- <div style="display:flex; border: 2px solid; margin-bottom: 14px;">
+  <app-time-picker
+  [selectedHour]="times[0].hour"
+  [selectedMinute]="times[0].minute"
+  (timeChange)="onTimeChange(0, $event)">
+</app-time-picker>
+ 
+<app-time-picker
+  [selectedHour]="times[1].hour"
+  [selectedMinute]="times[1].minute"
+  (timeChange)="onTimeChange(1, $event)">
+</app-time-picker>
+</div> -->
+
+ <!-- <div style="display:flex">
+  <app-time-picker
+  [selectedHour]="times[2].hour"
+  [selectedMinute]="times[2].minute"
+  (timeChange)="onTimeChange(2, $event)">
+</app-time-picker>
+ 
+<app-time-picker
+  [selectedHour]="times[3].hour"
+  [selectedMinute]="times[3].minute"
+  (timeChange)="onTimeChange(3, $event)">
+</app-time-picker>
+ </div> -->
+ <div style="display:flex">
+<app-time-picker
+  [selectedSecond]="times[2].second"
+  (timeChange)="onTimeChange(2, $event)">
+</app-time-picker>
+
+<app-time-picker
+  [selectedSecond]="times[3].second"
+  (timeChange)="onTimeChange(3, $event)">
+</app-time-picker>
+
+</div>
+

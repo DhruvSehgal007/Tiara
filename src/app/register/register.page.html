@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true" class="registerion">
+  <section class="resgisterscreen">
+    <div class="header">
+      <i class="fa-solid fa-angle-left"></i>
+    </div>
+ <div class="logodivimage">
+  <img class="icons-image" src="../../assets/mainimages/Tiara_black.png"alt="Pending"/>
+       </div>
+    <div class="registerheadings">
+      <p class="registerpone">Register</p>
+      <p class="registerptwo">Create your new account</p>
+    </div>
+
+    <div class="inputfields">
+
+      <!-- Name + Email Fields -->
+      <div *ngIf="step === 1">
+        <div class="input-group">
+          <i class="fas fa-user icon"></i>
+          <input type="text" placeholder="Full Name" [(ngModel)]="fullName" />
+        </div>
+
+        <div class="input-group">
+          <img
+            class="icons-image icon"
+            src="../../assets/mainimages/maill.svg"
+            alt="Pending"
+          />
+          <input type="text" placeholder="Enter your email" [(ngModel)]="email" />
+        </div>
+      </div>
+
+      <!-- OTP Field -->
+      <div *ngIf="step === 2">
+        <div class="input-group">
+          <input type="text" placeholder="Enter OTP Code" [(ngModel)]="otp" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Button -->
+    <!-- <div class="nextbtn">
+      <ion-button expand="block" class="align-center" (click)="onNextClick()">
+        <span class="button-text">Next</span>
+      </ion-button>
+    </div> -->
+    <div class="loginbtn">
+  <ion-button expand="block" (click)="onNextClick()">Next</ion-button>
+    </div>
+  </section>
+</ion-content>

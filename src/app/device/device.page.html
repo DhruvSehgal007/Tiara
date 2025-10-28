@@ -1,0 +1,164 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="headertoolbar">
+    <div class="header">
+      <i class="fa-solid fa-angle-left" (click)="onhome()"></i>
+      <img
+        class="icons-image"
+        src="../../assets/mainimages/Tiara_black_logo.svg"
+        alt="Pending"
+      />
+      <p>Cancel</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <section class="device">
+    <div class="maingrey">
+      <div class="currenttymdiv">
+          <p class="currenttymdivpone">{{ currentTime }}</p>
+          <p class="currenttymdivptwo">{{ currentDay }}</p>
+        <i class="fa-solid fa-angle-right rightarrow"></i>
+      </div>
+
+      <!-- <div class="currenttmodetym">
+        <p class="cmdmode">Mode IV</p>
+        <p class="cmdtym">Run time: {{ runTime }}s | Stop time: {{ stopTime }}s</p>
+        <p class="cmdhour">02 hours</p>
+      </div> -->
+      <div class="currenttmodetym" *ngIf="enabledModeId">
+  <p class="cmdmode">{{ enabledModeLabel }}</p>
+  <p class="cmdtym">On: {{ runTime }}s | Pause: {{ stopTime }}s</p>
+  <!-- <p class="cmdhour">{{ totalHours }}</p> -->
+<p class="cmdhour">
+  {{ startTimeFormatted }}/{{ endTimeFormatted }}
+</p>
+</div>
+    </div>
+
+    <div class="btn_cmn">
+      <div class="status">
+        <i class="fa-solid fa-power-off"></i>
+        <p>Running status</p>
+      </div>
+      <div class="onoff">
+        <p [innerText]="isRunning ? 'On' : 'Off'"></p>
+        <div
+          class="toggle-switch"
+          [class.active]="isRunning"
+          (click)="togglePumpLoop()"
+        >
+          <div class="switch-handle"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn_cmn">
+      <div class="status">
+        <img
+          class="icons-image"
+          src="../../assets/mainimages/light_bulb.svg"
+          alt="Pending"
+        />
+        <p>Light</p>
+      </div>
+      <div class="onoff">
+        <p [innerText]="isLightOn ? 'On' : 'Off'"></p>
+        <div
+          class="toggle-switch"
+          [class.active]="isLightOn"
+          (click)="toggleRunningtwo()"
+        >
+          <div class="switch-handle"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="btn_cmn">
+      <div class="status">
+        <img
+          class="icons-image"
+          src="../../assets/mainimages/working_mode.svg"
+          alt="Pending"
+        />
+        <p>Working Mode</p>
+      </div>
+      <div class="onoff">
+        <a [routerLink]="['/mode']" style="cursor: pointer; text-decoration:none">
+          <p>Mode IV</p>
+        </a>
+        <i class="fa-solid fa-angle-right downleft"></i>
+      </div>
+    </div> -->
+    <div class="btn_cmn">
+  <div class="status">
+    <img
+      class="icons-image"
+      src="../../assets/mainimages/working_mode.svg"
+      alt="Pending"
+    />
+    <p>Working Mode</p>
+  </div>
+  <div class="onoff">
+    <a [routerLink]="['/mode']" style="cursor: pointer; text-decoration: none">
+      <p>{{ enabledModeLabel || 'None' }}</p>
+    </a>
+    <i class="fa-solid fa-angle-right downleft"></i>
+  </div>
+</div>
+
+    <div class="btn_cmn">
+      <div class="status">
+        <img
+          class="icons-image"
+          src="../../assets/mainimages/device_address.svg"
+          alt="Pending"
+        />
+        <p>Device address</p>
+      </div>
+      <div class="onoff">
+        <!-- <p>Mode IV</p> -->
+        <i class="fa-solid fa-angle-right downleft"></i>
+      </div>
+    </div>
+
+    <!-- modessss -->
+    <!-- <div class="btn_cmn">
+      <div class="status">
+       <i class="fa-solid fa-shuffle"></i>
+        <p>Channel</p>
+      </div>
+      <div class="onoff">
+        <input type="radio" name="channel" (change)="selectChannel(true)" /> Left
+
+    <input type="radio" name="channel" (change)="selectChannel(false)" /> Right
+      </div>
+    </div> -->
+<div class="btn_cmn">
+  <div class="status">
+    <i class="fa-solid fa-shuffle"></i>
+    <p>Channel</p>
+  </div>
+
+<div class="onoff">
+  <label class="labelsradio">
+    <input type="radio" name="channel" (change)="selectChannel(true)" />
+    Left
+  </label>
+  <label class="labelsradio">
+    <input type="radio" name="channel" (change)="selectChannel(false)" />
+    Right
+  </label>
+</div>
+
+
+</div>
+
+    <!-- modessss -->
+
+<div class="loginbtn">
+  <ion-button expand="block" (click)="disconnect()">Disconnect</ion-button>
+</div>
+
+  </section>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="headertoolbar">
+    <div class="header">
+      <div class="crossdiv">
+        <i class="fa-solid fa-xmark cross"></i>
+      </div>
+      <div class="addtext">
+        <p>Name Your Diffuser</p>
+      </div>
+      <div class="blank">
+        <p></p>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="addfuser">
+  <section class="addfuser_section">
+    <div class="line"></div>
+    <div class="text">
+      <p class="before">Success</p>
+      <p class="circulates">Congrats on adding your<br />diffuser, Pooja!</p>
+      <p class="upwind">finally, where is this diffuser?</p>
+    </div>
+
+    <!-- <div class="custom-dropdown select_div">
+    <div class="selected options_select" (click)="toggleDropdown()">
+      {{ selectedRoomName || 'Select a Room' }}
+    </div>
+
+    <ul *ngIf="isOpen" class="options">
+      <li *ngFor="let room of rooms" (click)="selectRoom(room)">
+        {{ room.name }}
+      </li>
+    </ul>
+  </div> -->
+
+    <div class="custom-dropdown select_div">
+      <div class="selected options_select" (click)="toggleDropdown()">
+        {{ selectedRoomName || 'Select Room' }}
+        <span class="arrow" [class.open]="isOpen"
+          ><i class="fa-solid fa-angle-down"></i
+        ></span>
+      </div>
+
+      <ul *ngIf="isOpen" class="options animate-slide">
+        <li *ngFor="let room of rooms" (click)="selectRoom(room)">
+          {{ room.name }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="nextbtn_div">
+      <p class="nextbtn" (click)="ondevice()">FINISH</p>
+    </div>
+  </section>
+</ion-content>
+<!-- <app-footer></app-footer> -->

@@ -1,0 +1,32 @@
+<ion-tab-bar slot="bottom" class="tabs-bar">
+  <button
+    (click)="navigateToHome()"
+    [class.active]="isActive(['/home'])"
+    class="tab_btns"
+  >
+    <!-- <i class="fa-solid fa-house footericons"></i> -->
+     <i class="fa-solid fa-bars footericons"></i>
+    <!-- <p class="tabtext"> Home</p> -->
+  </button>
+
+  <button
+    (click)="navigateToNotification()"
+    [class.active]="isActive(['/notification'])"
+    class="tab_btns"
+  >
+    <!-- <i class="fa-solid fa-bell footericons"></i> -->
+    <i class="fa-regular fa-square footericons"></i>
+    <!-- <p class="tabtext">Notification</p> -->
+  </button>
+
+  <button
+    (click)="navigateTomyaccount()"
+    [class.active]="isActive(['/setting'])"
+    [class.active-tab]="isActive(['/setting'])"
+    class="tab_btns"
+  >
+    <!-- <i class="fa-solid fa-gear footericons"></i> -->
+     <i class="fa-solid fa-angle-left footericons"></i>
+    <!-- <p class="tabtext">Setting</p> -->
+  </button>
+</ion-tab-bar>

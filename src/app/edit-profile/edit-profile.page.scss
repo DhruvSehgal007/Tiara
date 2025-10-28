@@ -1,0 +1,106 @@
+//header
+ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
+  box-shadow: 0px 0px 0px 0px !important;
+}
+// ion-content.md.content-ltr.hydrated {
+//     --background: black;
+// }
+
+.headertoolbar {
+  --background: #fdfbe4;
+}
+.header p {
+  margin-bottom: 0px;
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  color: black;
+}
+
+.header {
+  margin: 0px 20px 0px 20px;
+  position: relative;
+  text-align: center;
+}
+
+.main_content {
+  --background: #fdfbe4;
+}
+
+i.fa-solid.fa-angle-left {
+  color: #ffffff;
+  background: black;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  position: absolute;
+  top: 5px;
+}
+.profile_screen {
+  padding: 14px;
+}
+
+.profileion {
+  --background: black;
+}
+.profile-area {
+  text-align: center;
+  padding-top: 10px;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+}
+.camera-img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 50%;
+  right: 0;
+  bottom: 0;
+}
+.first-name {
+  background: none;
+  border: 2px solid black;
+  color: #ffffff;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-family: "railway";
+  font-size: 15px;
+}
+.inputs {
+  padding: 0px 14px 0px 14px;
+}
+.name {
+  color: black;
+  font-family: railway;
+  font-size: 15px;
+  margin: 0px 0px 8px 12px;
+  font-weight: 600;
+}
+.second {
+  margin-top: 14px;
+}
+.third {
+  margin-top: 14px;
+}
+.fourth {
+  margin-top: 14px;
+}
+.button-save {
+  background: #F1C27D;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 4px;
+  margin-top: 36px;
+  padding: 10px;
+}
+.save {
+  color: black;
+  background: none;
+  font-weight: 600;
+}

@@ -1,0 +1,42 @@
+.picker {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  margin: 1rem auto;
+  padding: 0 20px;
+}
+
+.swiper-container {
+  width: 80px;
+  height: 210px;
+  float: left;
+  position: relative;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+  font-weight: bold;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+.vizor {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  height: 70px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

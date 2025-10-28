@@ -1,0 +1,91 @@
+//header
+ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
+    box-shadow: 0px 0px 0px 0px !important;
+}
+
+.headertoolbar{
+--background: #ffffff;
+}
+.header p {
+    margin-bottom: 0px;
+        position: absolute;
+    right: 10px;
+    top: 6px;
+
+}
+
+.header{
+    margin: 0px 20px 0px 20px;
+    position: relative;
+    text-align: center;
+}
+i.fa-solid.fa-angle-left {
+color: #ffffff;
+    background: black;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+        position: absolute;
+    top: 5px;
+
+}
+ion-content.md.content-ltr.hydrated {
+    --background: black;
+}
+//header
+
+.devicenameion {
+    --background: black;
+}
+section.device_namecreen {
+    padding: 16px;
+}
+
+ion-button.align-right {
+  --background: #ffffff;
+
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+ion-button.align-right .button-text {
+    width: 100%;
+    text-align: left;
+    font-family: railway;
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: black;
+    text-transform: none;
+}
+
+
+ion-button.align-center {
+  --background: #ffffff;
+
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+ion-button.align-center .button-text {
+    width: 100%;
+    text-align: center;
+    font-family: railway;
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: black;
+    text-transform: none;
+}
+
+p.devicename {
+    color: white;
+    font-family: 'railway';
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 14px;
+}

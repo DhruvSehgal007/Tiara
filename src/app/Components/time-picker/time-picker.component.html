@@ -1,0 +1,44 @@
+<!-- <div class="time-picker">
+  <div class="picker-column">
+    <div *ngFor="let hour of hours" 
+         [class.selected]="hour === selectedHour" 
+         (click)="selectHour(hour)">
+      {{ hour }} h
+    </div>
+  </div>
+ 
+  <div class="picker-column">
+    <div *ngFor="let minute of minutes" 
+         [class.selected]="minute === selectedMinute" 
+         (click)="selectMinute(minute)">
+      {{ minute }} m
+    </div>
+  </div>
+ 
+</div> -->
+
+<div class="time-picker">
+  <div class="picker-column">
+    <div *ngFor="let hour of hours"
+         [class.selected]="hour === selectedHour"
+         (click)="selectHour(hour)">
+      {{ hour }} h
+    </div>
+  </div>
+
+  <div class="picker-column">
+    <div *ngFor="let minute of minutes"
+         [class.selected]="minute === selectedMinute"
+         (click)="selectMinute(minute)">
+      {{ minute }} m
+    </div>
+  </div>
+
+  <div class="picker-column">
+    <div *ngFor="let second of seconds"
+         [class.selected]="second === selectedSecond"
+         (click)="selectSecond(second)">
+      {{ second }} s
+    </div>
+  </div>
+</div>

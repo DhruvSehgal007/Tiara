@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Swiper Time Picker</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div class="picker arrows">
+    <div class="swiper-container hours">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let h of hours">{{ h }}</div>
+      </div>
+    </div>
+
+    <div class="swiper-container minutes">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let m of minutes">{{ m }}</div>
+      </div>
+    </div>
+
+    <div class="swiper-container seconds">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let s of seconds">{{ s }}</div>
+      </div>
+    </div>
+
+    <div class="vizor"></div>
+  </div>
+
+<ion-text color="light" class="ion-padding">
+  Selected Time:
+  <strong>
+    <span>{{ selectedHour }}</span>:<span>{{ selectedMinute }}</span>:<span>{{ selectedSecond }}</span>
+  </strong>
+</ion-text>
+
+</ion-content>

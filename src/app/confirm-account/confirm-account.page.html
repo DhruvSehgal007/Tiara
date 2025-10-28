@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="headertoolbar">
+    <div class="header">
+      <i class="fa-solid fa-angle-left" (click)="onProfile()"></i>
+      <img
+        class="icons-image"
+        src="../assets/mainimages/Tiara_black_logo.svg"
+        alt="Pending"
+      />
+      <p>Cancel</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <section class="delete">
+    <div class="cont_div">
+      <p class="name1">Delete Account</p>
+      <p class="name2">
+        This action is permanent and cannot be undone. All your data, preferences,
+        and history will be permanently removed.
+      </p>
+    </div>
+    <div class="main-btns">
+      <div class="btn-delete">
+        <button class="acc1" (click)="testClick()" >Delete Account</button>
+      </div>
+      <div class="btn-back">
+        <button class="acc2">Go Back</button>
+      </div>
+    </div>
+  </section>
+  
+ 
+ <!-- Popup Overlay -->
+  <div class="popup-backdrop" *ngIf="showPopup">
+    <div class="popup-box">
+      <p class="popup-title">Are You Sure You Want To Delete Your Account?</p>
+      <div class="popup-actions">
+        <button class="cancel-btn" (click)="showPopup = false">Cancel</button>
+        <button class="delete-btn" (click)="deleteAccount()">Delete</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

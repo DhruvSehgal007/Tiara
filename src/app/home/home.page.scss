@@ -1,0 +1,351 @@
+// //header
+// ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
+//     box-shadow: 0px 0px 0px 0px !important;
+// }
+
+// .headertoolbar{
+// --background: #ffffff;
+// }
+// .header p {
+//     margin-bottom: 0px;
+//         position: absolute;
+//     right: 10px;
+//     top: 6px;
+
+// }
+
+// .header{
+//     margin: 0px 20px 0px 20px;
+//     position: relative;
+//     text-align: center;
+// }
+// i.fa-solid.fa-angle-left {
+// color: #ffffff;
+//     background: black;
+//     width: 24px;
+//     height: 24px;
+//     text-align: center;
+//     display: flex
+// ;
+//     align-items: center;
+//     justify-content: center;
+//     border-radius: 50px;
+//         position: absolute;
+//     top: 5px;
+
+// }
+// ion-content.md.content-ltr.hydrated {
+//     --background: black;
+// }
+
+// .twoicons {
+//     position: absolute;
+//     right: 0;
+//     top: 8px;
+// }
+// i.fa-solid.fa-magnifying-glass {
+//     padding-right: 14px;
+//     font-size: 20px;
+// }
+// .plusicon {
+//     font-size: 20px;
+//     border: 1px solid;
+//     border-radius: 50px;
+//     padding: 0px;
+//     width: 22px;
+//     height: 22px;
+// }
+// //header
+.homeion {
+    --background: #fdfbe4;
+}
+.line {
+  /* border: 1px solid rgba(128, 128, 128, 0.231372549); */
+  position: relative;
+  /* display: block; */
+  width: 100%;
+  height: 1px;
+  background: #8d8d8d;
+
+  border-radius: 50px;
+}
+.line::after {
+  content: "";
+  content: "";
+  /* display: block; */
+  width: 128px;
+  height: 3px;
+  background: #000000;
+  /* margin: 10px auto 0; */
+  border-radius: 50px;
+  position: absolute;
+  top: -1px;
+}
+.loginbtn ion-button {
+    --background: #ffffff;
+    font-family: 'railway';
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+}
+
+
+ion-button.align-right {
+  --background: linear-gradient(
+    90deg,
+    #b4880f 0%,
+    #fce46d 40%,
+    #fce46d 60%,
+    #b4880f 100%
+  );
+  text-align: center;
+  font-family: raleway;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+ion-button.align-right .button-text {
+    width: 100%;
+    text-align: left;
+    font-family: railway;
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: black;
+    text-transform: none;
+}
+
+section.homescreen {
+    padding: 0px 30px 0px 30px;
+    margin-top: 15px;
+}
+
+
+
+.plusicontwo {
+    color: white;
+    font-size: 28px;
+    border: 2px solid;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    align-items: center;
+    display: flex
+;
+    border-radius: 50px;
+    justify-content: center;
+}
+
+.addbldiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 20px;
+}
+
+p.ADD {
+    color: white;
+    font-family: 'railway';
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    padding-top: 4px;
+}
+p.nonedevice {
+    font-size: 17px;
+    color: white;
+    font-family: 'railway';
+    font-weight: 100;
+    margin-bottom: 0px;
+}
+
+
+
+
+.list {
+    background: white;
+    display: flex
+;
+    align-items: center;
+    padding: 10px 14px 10px 14px;
+    border-radius: 5px;
+    margin-bottom:10px;
+    position: relative;
+}                  
+.list p {
+    margin-bottom: 0px;
+    font-family: 'raleway';
+    font-size: 15px;
+    padding-left: 12px;
+    font-weight: 400;
+}
+i.fa-brands.fa-bluetooth-b {
+    font-size: 20px;
+}
+
+i.fa-solid.fa-angle-right {
+    color: black;
+    font-size: 18px;
+    padding-right: 4px;
+}
+
+
+
+// 
+.bluetooth-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  .modal-box {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #3880ff;
+      color: white;
+      border-radius: 8px;
+    }
+  }
+}
+
+
+
+
+
+
+
+// 
+// 
+.custom-spinner-wrapper {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    // position: absolute;
+    // left: 0;
+    // right: 0;
+    // top: 44%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0%;
+    background: #00000082;
+    height: 100%;
+}
+
+.loader {
+    border: 12px double white;
+    border-radius: 50%;
+    border-top: 12px double #000000;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#message-1 {
+  color: #fafafa;
+  font-family: courier;
+  font-size: 20px;
+  margin-top: 15px;
+  font-family: 'railway';
+}
+
+
+
+
+
+
+
+// new
+//header
+//header
+ion-header {
+  box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0),
+    0 0px 0px 0 rgba(0, 0, 0, 0) !important;
+}
+.headertoolbar {
+  --background: #fdfbe4;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  margin: 40px 18px 10px 18px;
+}
+.crossdiv {
+  position: absolute;
+  z-index: 9;
+}
+.cross {
+  font-size: 18px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 50px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+.addtext {
+  width: 100%;
+  text-align: center;
+}
+.addtext p {
+  font-size: 22px;
+  color: #000000;
+  font-family: railway !important;
+  margin: 0px;
+  font-weight: 600;
+}
+// /header
+
+
+
+
+
+.list::after{
+    content: "";
+    width: 280px;
+    height: 1px;
+    background: #929292;
+    border-radius: 50px;
+    position: absolute;
+    top: 44px;
+    bottom: 27px;
+}
