@@ -89,6 +89,18 @@ export const routes: Routes = [
     path: 'select-bluetooth',
     loadComponent: () => import('./select-bluetooth/select-bluetooth.page').then( m => m.SelectBluetoothPage)
   },
+  {
+    path: 'inner-mode-setting',
+    loadComponent: () => import('./inner-mode-setting/inner-mode-setting.page').then( m => m.InnerModeSettingPage)
+  },
+  {
+    path: 'inner-mode',
+    loadComponent: () => import('./inner-mode/inner-mode.page').then( m => m.InnerModePage)
+  },
+  {
+    path: 'bluetooth-lists',
+    loadComponent: () => import('./bluetooth-lists/bluetooth-lists.page').then( m => m.BluetoothListsPage)
+  },
 
 
 

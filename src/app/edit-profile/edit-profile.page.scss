@@ -2,9 +2,9 @@
 ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
   box-shadow: 0px 0px 0px 0px !important;
 }
-// ion-content.md.content-ltr.hydrated {
-//     --background: black;
-// }
+ion-content.main_content.md.content-ltr.hydrated {
+    --background: #fdfbe4;
+}
 
 .headertoolbar {
   --background: #fdfbe4;
@@ -27,19 +27,7 @@ ion-header.md.header-md.header-translucent.header-collapse-none.header-transluce
   --background: #fdfbe4;
 }
 
-i.fa-solid.fa-angle-left {
-  color: #ffffff;
-  background: black;
-  width: 24px;
-  height: 24px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  position: absolute;
-  top: 5px;
-}
+
 .profile_screen {
   padding: 14px;
 }
@@ -63,14 +51,15 @@ i.fa-solid.fa-angle-left {
   bottom: 0;
 }
 .first-name {
-  background: none;
-  border: 2px solid black;
-  color: #ffffff;
-  padding: 10px;
-  width: 100%;
-  border-radius: 5px;
-  font-family: "railway";
-  font-size: 15px;
+background: none;
+    border: 2px solid black;
+    color: #000000;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-family: "railway";
+    font-size: 15px;
+    font-weight: 500;
 }
 .inputs {
   padding: 0px 14px 0px 14px;
@@ -104,3 +93,44 @@ i.fa-solid.fa-angle-left {
   background: none;
   font-weight: 600;
 }
+//header
+ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
+  box-shadow: 0px 0px 0px 0px !important;
+}
+
+.headertoolbar {
+  --background: #fdfbe4;
+  padding-top: 34px;
+}
+.header p {
+  margin-bottom: 0px;
+  position: absolute;
+  right: 10px;
+  top: 6px;
+}
+
+.header {
+  margin: 0px 20px 0px 20px;
+  position: relative;
+  text-align: center;
+}
+.back{
+    color: #000000;
+    background: #F1C27D;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 4px;
+}
+ion-content.md.content-ltr.hydrated {
+  --background: black;
+}
+.icons-image-head {
+    width: 32%;
+}
+//header

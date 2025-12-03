@@ -20,27 +20,16 @@
     <div class="text">
       <p class="before">Success</p>
       <p class="circulates">Congrats on adding your<br />diffuser, Pooja!</p>
-      <p class="upwind">finally, where is this diffuser?</p>
+      <p class="upwind">Finally, where is this diffuser?</p>
     </div>
 
-    <!-- <div class="custom-dropdown select_div">
-    <div class="selected options_select" (click)="toggleDropdown()">
-      {{ selectedRoomName || 'Select a Room' }}
-    </div>
-
-    <ul *ngIf="isOpen" class="options">
-      <li *ngFor="let room of rooms" (click)="selectRoom(room)">
-        {{ room.name }}
-      </li>
-    </ul>
-  </div> -->
-
+    <!-- ✅ Custom dropdown -->
     <div class="custom-dropdown select_div">
       <div class="selected options_select" (click)="toggleDropdown()">
         {{ selectedRoomName || 'Select Room' }}
-        <span class="arrow" [class.open]="isOpen"
-          ><i class="fa-solid fa-angle-down"></i
-        ></span>
+        <span class="arrow" [class.open]="isOpen">
+          <i class="fa-solid fa-angle-down"></i>
+        </span>
       </div>
 
       <ul *ngIf="isOpen" class="options animate-slide">
@@ -50,9 +39,29 @@
       </ul>
     </div>
 
+    <!-- ✅ Finish button -->
     <div class="nextbtn_div">
-      <p class="nextbtn" (click)="ondevice()">FINISH</p>
+      <p class="nextbtn" (click)="saveMapping()">FINISH</p>
     </div>
   </section>
 </ion-content>
-<!-- <app-footer></app-footer> -->
+
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Select Room</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Choose Room</ion-label>
+    <ion-select [(ngModel)]="selectedRoomName">
+      <ion-select-option *ngFor="let room of rooms" [value]="room.name">
+        {{ room.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="block" (click)="saveMapping()">Save Mapping</ion-button>
+</ion-content> -->

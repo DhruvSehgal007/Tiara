@@ -10,9 +10,12 @@ import {
   IonSelect,
   IonSelectOption,
   IonLabel,
+  IonButton,
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { FooterTabsComponent } from '../Components/footer/footer.component';
+import { AuthserviceService } from '../services/authservice.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-room-selector',
@@ -28,25 +31,29 @@ import { FooterTabsComponent } from '../Components/footer/footer.component';
     IonItem,
     IonSelect,
     IonSelectOption,
+    IonButton,
     CommonModule,
     FormsModule,
     FooterTabsComponent,
   ],
 })
-
 export class RoomSelectorPage implements OnInit {
-  selectedRoom: string = '';
-
-  rooms = [
-    { id: 'room1', name: 'Conference Room' },
-    { id: 'room2', name: 'Meeting Room' },
-    { id: 'room3', name: 'Server Room' },
-  ];
-
   selectedRoomName = '';
   isOpen = false;
 
-  constructor(private router: Router) {}
+  rooms = [
+    { id: 'room1', name: 'Bathroom' },
+    { id: 'room2', name: 'Bedroom' },
+    { id: 'room3', name: 'Entrance' },
+    { id: 'room4', name: 'Guest room' },
+    { id: 'room5', name: 'kitchen' },
+    { id: 'room6', name: 'Living room' },
+  ];
+
+  constructor(
+    private router: Router,
+    private authService: AuthserviceService,
+  ) {}
 
   ngOnInit() {}
 
@@ -59,7 +66,35 @@ export class RoomSelectorPage implements OnInit {
     this.isOpen = false;
   }
 
-  ondevice() {
-    this.router.navigate(['home']);
+  // async saveMapping() {
+  //   if (!this.selectedRoomName) {
+  //     alert('Please select a room before finishing.');
+  //     return;
+  //   }
+
+  //   try {
+  //     const data = await this.authService.saveMapping(this.selectedRoomName);
+  //     alert(data.message || 'Room mapping saved successfully!');
+  //     this.router.navigate(['/home']);
+  //   } catch (error: any) {
+  //     alert(error.message || 'Failed to save mapping.');
+  //   }
+  // }
+  async saveMapping() {
+  if (!this.selectedRoomName) {
+    alert('Please select a room before finishing.');
+    return;
   }
+
+  this.authService.saveMapping(this.selectedRoomName).subscribe({
+    next: (res: any) => {
+      alert(res.message || 'Room mapping saved successfully!');
+      this.router.navigate(['/bluetooth-lists']);
+    },
+    error: (err) => {
+      alert(err.error?.message || 'Failed to save mapping.');
+    }
+  });
+ }
+
 }

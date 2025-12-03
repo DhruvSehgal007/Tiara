@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:3000/api', // Base URL for your API
+  // baseUrl: 'http://localhost:3000/api', // Base URL for your API
+  baseUrl: 'https://staging.ekarigar.com/tiaraapi/api',
  
 };
 

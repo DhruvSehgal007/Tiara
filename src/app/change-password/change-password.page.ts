@@ -20,8 +20,8 @@ export class ChangePasswordPage  {
   }
 
 
-        onChangePassword() {
-this.router.navigate(['edit-profile'])
+        onprofile() {
+this.router.navigate(['profile'])
 }
 
 }

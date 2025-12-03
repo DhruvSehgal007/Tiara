@@ -80,12 +80,52 @@ async ngOnInit() {
 
 
 
+// async scanDevices() {
+//   this.isScanning = true;
+//   this.devices = [];
+//   this.searchIndex = 0;
+//     this.showAddMessage = false; // ⬅️ Hide the ADD section on click
+
+
+//   this.searchInterval = setInterval(() => {
+//     this.updateSearchMessage();
+//   }, 400);
+
+//   console.log('🔍 Scanning for BLE devices...');
+//   await BleClient.requestLEScan({ allowDuplicates: false }, (result) => {
+//     const name = result.device.name ?? result.localName;
+
+//     if (!name) return;
+
+//     const alreadyExists = this.devices.some(
+//       d => d.device.deviceId === result.device.deviceId
+//     );
+//     if (!alreadyExists) {
+//       this.devices.push(result);
+//       console.log('📡 Found:', name);
+//     }
+//   });
+
+
+//   setTimeout(async () => {
+//   await BleClient.stopLEScan();
+//   this.isScanning = false;
+//   clearInterval(this.searchInterval);
+
+//   // Show ADD message again if no devices found
+//   if (this.devices.length === 0) {
+//     this.showAddMessage = true;
+//   }
+
+//   console.log('⏹️ Scan stopped. Devices found:', this.devices.length);
+// }, 10000);
+
+// }
 async scanDevices() {
   this.isScanning = true;
   this.devices = [];
   this.searchIndex = 0;
-    this.showAddMessage = false; // ⬅️ Hide the ADD section on click
-
+  this.showAddMessage = false; // ⬅️ Hide the ADD section on click
 
   this.searchInterval = setInterval(() => {
     this.updateSearchMessage();
@@ -95,58 +135,60 @@ async scanDevices() {
   await BleClient.requestLEScan({ allowDuplicates: false }, (result) => {
     const name = result.device.name ?? result.localName;
 
-    if (!name) return;
-
-    const alreadyExists = this.devices.some(
-      d => d.device.deviceId === result.device.deviceId
-    );
-    if (!alreadyExists) {
-      this.devices.push(result);
-      console.log('📡 Found:', name);
+    // Filter to match only device names starting with "Scent-"
+    if (name && name.startsWith('Scent-')) {
+      const alreadyExists = this.devices.some(
+        d => d.device.deviceId === result.device.deviceId
+      );
+      if (!alreadyExists) {
+        this.devices.push(result);
+        console.log('📡 Found:', name);
+      }
     }
   });
 
-
   setTimeout(async () => {
-  await BleClient.stopLEScan();
-  this.isScanning = false;
-  clearInterval(this.searchInterval);
+    await BleClient.stopLEScan();
+    this.isScanning = false;
+    clearInterval(this.searchInterval);
 
-  // Show ADD message again if no devices found
-  if (this.devices.length === 0) {
-    this.showAddMessage = true;
-  }
+    // Show ADD message again if no devices found
+    if (this.devices.length === 0) {
+      this.showAddMessage = true;
+    }
 
-  console.log('⏹️ Scan stopped. Devices found:', this.devices.length);
-}, 10000);
-
+    console.log('⏹️ Scan stopped. Devices found:', this.devices.length);
+  }, 10000); // Stops scanning after 10 seconds
 }
 
 
 
 
-  async connectToDevice(device: ScanResult) {
+
+async connectToDevice(device: ScanResult) {
   try {
     await BleClient.connect(device.device.deviceId, () => {
       this.connected = false;
       this.connectedDeviceId = '';
-      localStorage.removeItem('connectedDeviceId'); // clear on disconnect
+      localStorage.removeItem('connectedDeviceId');
+      localStorage.removeItem('connectedDeviceName'); // clear on disconnect
       console.warn('⚠️ Disconnected');
     });
 
     this.connectedDeviceId = device.device.deviceId;
     this.connected = true;
 
-    // ✅ Save device ID to localStorage
+    // ✅ Save both ID and NAME to localStorage
     localStorage.setItem('connectedDeviceId', this.connectedDeviceId);
+    localStorage.setItem('connectedDeviceName', device.device.name || 'Unknown Device');
 
     this.svcUuid = '0000ffe0-0000-1000-8000-00805f9b34fb';
     this.chrUuid = '0000ffe1-0000-1000-8000-00805f9b34fb';
 
     alert('✅ Connected to: ' + device.device.name);
     setTimeout(() => {
-      this.router.navigate(['/device']);
-    }, 100)
+      this.router.navigate(['/room-selector']);
+    }, 100);
   } catch (err) {
     console.error('❌ Connection failed:', err);
     alert('❌ Connection failed');
@@ -186,5 +228,11 @@ updateSearchMessage() {
     this.searchIndex = (this.searchIndex + 1) % this.searchMessages.length;
   }
 }
+
+
+onadddiffuser() {
+this.router.navigate(['add-diffuser'])
+}
+
 
 }

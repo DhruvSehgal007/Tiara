@@ -1,13 +1,10 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar class="headertoolbar">
     <div class="header">
-      <i class="fa-solid fa-angle-left"></i>
-      <img
-        class="icons-image"
-        src="../assets/mainimages/Tiara_black_logo.svg"
-        alt="Pending"
-      />
-      <p>Cancel</p>
+      <i class="fa-solid fa-angle-left back" (click)="onprofile()"></i>
+      <img class="icons-image-head" src="../../assets/mainimages/Tiara_logo.png" />
+      <p></p>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -27,25 +24,27 @@
       />
     </div>
   </section>
-  <section class="inputs">
-    <div class="first">
-      <p class="name">First Name</p>
-      <input type="" class="first-name" placeholder="Enter first name" />
-    </div>
-    <div class="second">
-      <p class="name">Last Name</p>
-      <input type="" class="first-name" placeholder="Enter last name" />
-    </div>
-    <div class="third">
-      <p class="name">Phone No.</p>
-      <input type="number" class="first-name" placeholder="Enter phone no." />
-    </div>
-    <div class="fourth">
-      <p class="name">Email ID</p>
-      <input type="" class="first-name" placeholder="Enter email address" />
-    </div>
-    <div class="button-save">
-      <button class="save">Save</button>
-    </div>
-  </section>
+<!-- In edit-profile.html -->
+<section class="inputs">
+  <div class="first">
+    <p class="name">First Name</p>
+    <input type="text" class="first-name" [(ngModel)]="first_name" placeholder="Enter first name" />
+  </div>
+  <div class="second">
+    <p class="name">Last Name</p>
+    <input type="text" class="first-name" [(ngModel)]="last_name" placeholder="Enter last name" />
+  </div>
+  <div class="third">
+    <p class="name">Phone No.</p>
+    <input type="number" class="first-name" [(ngModel)]="phone" placeholder="Enter phone no." />
+  </div>
+  <div class="fourth">
+    <p class="name">Email ID</p>
+    <input type="email" class="first-name" [(ngModel)]="email" placeholder="Enter email address" />
+  </div>
+  <div class="button-save">
+    <button class="save" (click)="saveUserDetails()">Save</button>
+  </div>
+</section>
+
 </ion-content>

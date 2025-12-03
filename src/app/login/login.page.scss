@@ -1,26 +1,67 @@
-//header
-ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
-  box-shadow: 0px 0px 0px 0px !important;
-}
+// //header
+// ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
+//   box-shadow: 0px 0px 0px 0px !important;
+// }
 
+// .headertoolbar {
+//   --background: #fdfbe4;
+// }
+// .header {
+//   margin: 0px 20px 0px 20px;
+// }
+// i.fa-solid.fa-angle-left {
+//   color: white;
+//   background: black;
+//   width: 24px;
+//   height: 24px;
+//   text-align: center;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   border-radius: 50px;
+// }
+// //header
+//header
+ion-header {
+  box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0),
+    0 0px 0px 0 rgba(0, 0, 0, 0) !important;
+}
 .headertoolbar {
   --background: #fdfbe4;
 }
 .header {
-  margin: 0px 20px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  margin: 40px 18px 10px 18px;
 }
-i.fa-solid.fa-angle-left {
-  color: white;
-  background: black;
+.crossdiv {
+  position: absolute;
+  z-index: 9;
+}
+.cross {
+  font-size: 18px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 50px;
   width: 24px;
   height: 24px;
+  line-height: 24px;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
 }
-//header
+.addtext {
+  width: 100%;
+  text-align: center;
+}
+.addtext p {
+  font-size: 22px;
+  color: #000000;
+  font-family: railway !important;
+  margin: 0px;
+  font-weight: 600;
+}
+// /header
 
 .ioncontentlogin {
   --background: #fdfbe4;
@@ -70,6 +111,7 @@ p.ptwo {
   justify-content: center;
   align-items: center;
   display: flex;
+  color: black;
 }
 
 .input-group .icon {

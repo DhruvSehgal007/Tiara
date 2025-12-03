@@ -1,0 +1,179 @@
+//header
+ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {
+  box-shadow: 0px 0px 0px 0px !important;
+}
+
+.headertoolbar {
+  --background: #fdfbe4;
+  padding-top: 34px;
+}
+.bars {
+    margin-bottom: 0;
+    position: absolute;
+    right: 0px;
+    top: 6px;
+    color: #000000;
+    background: #F1C27D;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    /* top: 5px; */
+    /* font-weight: 200 !important; */
+}
+
+.header {
+  margin: 0px 20px 0px 20px;
+  position: relative;
+  text-align: center;
+}
+.user {
+color: #000000;
+    background: #F1C27D;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 5px;
+    font-weight: 200 !important;
+}
+ion-content.md.content-ltr.hydrated {
+  --background: black;
+}
+//header
+.profileion {
+  --background: #fdfbe4 !important;
+}
+
+
+
+.head_reverse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px 0px 20px;
+    color: black;
+}
+
+.head_reverse p {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: raleway;
+    margin: 0;
+}
+
+
+.dynamic_Bluetooth_names {
+display: flex;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    padding: 0px 20px 20px 20px;
+    gap: 5px;
+    justify-content: space-between;
+}
+.bluetooth {
+    background: linear-gradient(90deg, #b4880f 0%, #fce46d 40%, #fce46d 60%, #b4880f 100%);
+    border-radius: 10px;
+    padding: 20px 14px 20px 14px;
+    width: 48%;
+    color: black;
+    margin-bottom: 14px;
+
+}
+.icon_image_min {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+.totalmin {
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0px 8px 0px 8px;
+}
+p.min_number {
+    margin: -4px 0px -10px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: raleway;
+}
+p.min {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: raleway;
+}
+img.icon_image {
+    width: 46px;
+}
+
+
+
+
+
+
+
+.toggle-switch {
+    width: 36px;
+    height: 16px;
+    background: #f1c27d;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s 
+ease;
+}
+.toggle-switch .switch-handle {
+    width: 16px;
+    height: 16px;
+    background: #fdfbe4;
+    border-radius: 50%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: left 0.3s 
+ease;
+}
+.toggle-switch.active {
+    background: #fdfbe4;
+}
+.toggle-switch.active .switch-handle{
+    left: 20px;
+    background: #f1c27d;
+}
+
+
+
+
+.bluetooth_name_toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    align-items: center;
+}
+p.Bl_name {
+    margin: 0;
+    font-size: 13px;
+    font-family: raleway;
+    font-weight: 500;
+}
+p.Bl_name.small {
+    display: none;
+}
+img.icons-image {
+    width: 32%;
+}

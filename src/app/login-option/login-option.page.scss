@@ -29,8 +29,12 @@ font-family: "raleway";
 .destroy {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 100vh;
+  padding: 0px 20px 0px 20px;
+}
+.logodivimage .icons-image {
+    width: 50%;
 }
 //header
 ion-header.md.header-md.header-translucent.header-collapse-none.header-translucent-md.hydrated {

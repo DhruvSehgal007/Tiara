@@ -170,7 +170,7 @@ p.nonedevice {
 
 
 .list {
-    background: white;
+    // background: white;
     display: flex
 ;
     align-items: center;
@@ -178,6 +178,7 @@ p.nonedevice {
     border-radius: 5px;
     margin-bottom:10px;
     position: relative;
+    color: black;
 }                  
 .list p {
     margin-bottom: 0px;
@@ -185,6 +186,7 @@ p.nonedevice {
     font-size: 15px;
     padding-left: 12px;
     font-weight: 400;
+    color: black;
 }
 i.fa-brands.fa-bluetooth-b {
     font-size: 20px;
@@ -196,7 +198,9 @@ i.fa-solid.fa-angle-right {
     padding-right: 4px;
 }
 
-
+.bluetoothlist {
+    margin-top: 14px;
+}
 
 // 
 .bluetooth-modal {
@@ -264,21 +268,31 @@ i.fa-solid.fa-angle-right {
 }
 
 .loader {
-    border: 12px double white;
+    border: 12px double #dab223;
     border-radius: 50%;
-    border-top: 12px double #000000;
+    border-top: 12px double #ffffff;
     width: 60px;
     height: 60px;
     animation: spin 1s ease-in-out infinite;
 }
-
+p.circulates {
+    font-size: 17px;
+    font-weight: 600;
+    /* margin-bottom: 10px !important; */
+    font-family: raleway !important;
+    // margin: 0 !important;
+    text-align: center;
+    color: black;
+    padding: 0px 20px 0px 20px;
+    margin: 34px 0px 20px 0px;
+}
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
 #message-1 {
-  color: #fafafa;
+  color: white;
   font-family: courier;
   font-size: 20px;
   margin-top: 15px;
@@ -340,12 +354,11 @@ ion-header {
 
 
 .list::after{
-    content: "";
+content: "";
     width: 280px;
     height: 1px;
-    background: #929292;
+    background: #8D8D8D;
     border-radius: 50px;
     position: absolute;
-    top: 44px;
-    bottom: 27px;
+    top: 40px;
 }

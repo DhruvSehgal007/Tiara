@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonButton, AlertController } from '@ionic/angular/standalone';
+import {
+  IonContent,
+  IonHeader,
+  IonButton,
+  AlertController,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 import { HttpClientModule } from '@angular/common/http'; // ✅ Important!
 import { AuthserviceService } from '../services/authservice.service';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-register',
@@ -17,8 +22,10 @@ import { Router } from '@angular/router';
     FormsModule,
     IonContent,
     IonButton,
-    HttpClientModule, // ✅ Add this to resolve HttpClient DI error
-  ]
+    IonHeader,
+    HttpClientModule,
+    IonToolbar // ✅ Add this to resolve HttpClient DI error
+  ],
 })
 export class RegisterPage {
   fullName: string = '';
@@ -43,11 +50,15 @@ export class RegisterPage {
       this.authService.signupStepOne(this.fullName, this.email).subscribe({
         next: (res) => {
           this.step = 2;
+
+          // ✅ Store email in localStorage for later use
+          localStorage.setItem('user_email', this.email);
+
           this.showAlert('Success', res.message || 'OTP sent to your email.');
         },
         error: (err) => {
           this.showAlert('Error', err.error?.message || 'Signup failed.');
-        }
+        },
       });
     } else if (this.step === 2) {
       if (!this.otp) {
@@ -59,8 +70,8 @@ export class RegisterPage {
       this.router.navigate(['/set-password'], {
         queryParams: {
           email: this.email,
-          otp: this.otp
-        }
+          otp: this.otp,
+        },
       });
     }
   }
@@ -73,5 +84,8 @@ export class RegisterPage {
     });
     await alert.present();
   }
-}
 
+  onloginoption() {
+this.router.navigate(['login-option'])
+}
+}

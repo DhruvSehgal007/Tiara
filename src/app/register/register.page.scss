@@ -1,9 +1,51 @@
+ion-header {
+  box-shadow: 0 0px 0px 0px rgba(0, 0, 0, 0), 0 0px 0px 0 rgba(0, 0, 0, 0),
+    0 0px 0px 0 rgba(0, 0, 0, 0) !important;
+}
+.headertoolbar {
+  --background: #fdfbe4;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  margin: 40px 18px 10px 18px;
+}
+.crossdiv {
+  position: absolute;
+  z-index: 9;
+}
+.cross {
+  font-size: 18px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 50px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+.addtext {
+  width: 100%;
+  text-align: center;
+}
+.addtext p {
+  font-size: 22px;
+  color: #000000;
+  font-family: railway !important;
+  margin: 0px;
+  font-weight: 600;
+}
+// /header
 .resgisterscreen {
   height: 100%;
   padding: 20px;
   background: #fdfbe4;
 }
-
+.logodivimage .icons-image {
+    width: 50%;
+}
 // .header {
 //     margin: 0px 20px 0px 20px;
 // }
@@ -48,6 +90,7 @@ p.registerptwo {
 
 .input-group input {
   width: 100%;
+  color: #000000;
   padding: 10px 20px 10px 50px;
   border: 2px solid black;
   border-radius: 10px;

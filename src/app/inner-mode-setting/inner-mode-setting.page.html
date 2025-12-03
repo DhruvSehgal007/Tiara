@@ -1,0 +1,146 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="headertoolbar">
+    <div class="header">
+      <i class="fa-solid fa-angle-left back" (click)="onbluetoothlist()"></i>
+      <img class="icons-image" src="../../assets/mainimages/Tiara_black_logo.svg" />
+      <p></p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="profileion">
+  <h2 class="newschedule">New Schedule</h2>
+    <div class="addnewschedule">
+    <p>Schedule Name</p>
+    <i class="fa-solid fa-plus add_btn" (click)="showScheduleForm()"></i>
+
+    </div>
+  <!-- <p>Room: {{ clickedDevice?.room_name }}</p>
+  <p>Bluetooth: {{ clickedDevice?.bluetooth_device_name }}</p> -->
+
+  <!-- MODES LIST -->
+  <section id="dynamic_modes" *ngIf="!isScheduleVisible">
+
+
+
+    <div
+      class="inner-mode"
+      *ngFor="let mode of serverModes"
+      (click)="editMode(mode)"
+      [ngClass]="{
+        'active-mode': mode.is_active == 1,
+        'inactive-mode': mode.is_active == 0
+      }"
+    >
+      <div class="time">
+        <p>
+          {{ calculateDisplayHours(mode.start_time, mode.end_time) }}
+          <span class="min">Hrs</span>
+        </p>
+      </div>
+
+      <div class="days_toggle">
+        <div class="days">
+          <p
+            *ngFor="let d of weekDays"
+            [class.active]="mode.selected_days?.split(',').includes(d)"
+          >
+            {{ d.charAt(0) }}
+          </p>
+        </div>
+
+        <!-- MODE ENABLE/DISABLE TOGGLE (NO PUMP HERE) -->
+        <div class="toggle" (click)="$event.stopPropagation()">
+          <div
+            class="toggle-switch"
+            [class.active]="mode.is_active == 1"
+            (click)="toggleMode(mode)"
+          >
+            <div class="switch-handle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADD / EDIT FORM -->
+  <section id="schedule_setting" *ngIf="isScheduleVisible">
+    <div class="schedule_name">
+      <p>{{ isEditMode ? 'Edit Schedule' : 'New Schedule' }}</p>
+    </div>
+
+    <div class="setting">
+      <!-- Select Days -->
+      <div class="select_day">
+        <p>Select Days</p>
+        <img src="../assets/icon/calender.png" alt="" />
+      </div>
+
+      <div class="weekdays">
+        <button
+          *ngFor="let day of weekDays"
+          [ngClass]="{ active: selectedDays.includes(day) }"
+          (click)="toggleDay(day)"
+        >
+          {{ day }}
+        </button>
+      </div>
+
+      <!-- Select Time -->
+      <div class="select_time">
+        <p>Select Time (Hours)</p>
+      </div>
+
+      <!-- Start Time (AM/PM) -->
+      <div class="time-row">
+        <div class="label">Start Time</div>
+        <div class="counter">
+          <button class="btn" (click)="decStart()">−</button>
+          <span class="value">{{ format12(startHour) }}</span>
+          <button class="btn" (click)="incStart()">+</button>
+        </div>
+      </div>
+
+      <!-- End Time (AM/PM) -->
+      <div class="time-row">
+        <div class="label">End Time</div>
+        <div class="counter">
+          <button class="btn" (click)="decEnd()">−</button>
+          <span class="value">{{ format12(endHour) }}</span>
+          <button class="btn" (click)="incEnd()">+</button>
+        </div>
+      </div>
+
+      <!-- Frequency -->
+      <div class="select_time">
+        <p>Frequency Time (Seconds)</p>
+      </div>
+
+      <!-- Run Time -->
+      <div class="time-row">
+        <div class="label">Run Time</div>
+        <div class="counter">
+          <button class="btn" (click)="decreaseRun()">−</button>
+          <span class="value">{{ runTime }}s</span>
+          <button class="btn" (click)="increaseRun()">+</button>
+        </div>
+      </div>
+
+      <!-- Stop Time -->
+      <div class="time-row">
+        <div class="label">Stop Time</div>
+        <div class="counter">
+          <button class="btn" (click)="decreaseStop()">−</button>
+          <span class="value">{{ stopTime }}s</span>
+          <button class="btn" (click)="increaseStop()">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM BUTTONS -->
+    <div class="buttons">
+      <p (click)="cancel()">Cancel</p>
+      <p (click)="saveMode()">Save</p>
+    </div>
+  </section>
+</ion-content>

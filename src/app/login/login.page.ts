@@ -19,7 +19,7 @@ import { AuthserviceService } from 'src/app/services/authservice.service';
 })
 export class LoginPage implements OnInit {
 
-  name: string = '';  // <-- FIXED: previously was fullName
+  email: string = '';  // <-- FIXED: previously was fullName
   password: string = '';
   errorMessage: string = '';
   passwordVisible: boolean = false;
@@ -32,26 +32,39 @@ export class LoginPage implements OnInit {
     this.passwordVisible = !this.passwordVisible;
   }
 
-  onLoginClick() {
-    if (!this.name || !this.password) {
-      this.errorMessage = 'Please enter both name and password.';
+onLoginClick() {
+    if (!this.email || !this.password) {
+      this.errorMessage = 'Please enter both email and password.';
       return;
     }
 
-    this.authService.login(this.name, this.password).subscribe({
+    this.authService.login(this.email, this.password).subscribe({
       next: (res: any) => {
+        console.log('Login successful:', res);
         localStorage.setItem('token', res.token);
+        localStorage.setItem('user_email', res.email);
         this.router.navigate(['/home']);
+        const data = this.authService.decodeJWT(res.token);
+        // const tokenconsole = JSON.parse(res.token)
+        console.log('toekn console',data)
+        localStorage.setItem('user_id', data.id);
       },
       error: (err) => {
-        this.errorMessage = err.error?.message || 'Invalid name or password.';
-      }
+        this.errorMessage = err.error?.message || 'Invalid email or password.';
+      },
     });
   }
 
 
-    onhome() {
-this.router.navigate(['home'])
+onloginoption() {
+this.router.navigate(['login-option'])
 }
+
+onregister() {
+this.router.navigate(['register'])
+}
+
+
+
 }
 

@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+<ion-toolbar class="headertoolbar">
+<div class="header">
+  <!-- <i class="fa-solid fa-angle-left"></i> -->
+  <i class="fa-regular fa-circle-user user"></i>
+  <img
+    class="icons-image"
+    src="../../assets/mainimages/Tiara_logo.png"
+    alt="Pending"
+  />
+  <i class="fa-solid fa-bars-staggered bars" (click)="onprofile()"></i>
+</div>
+</ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="profileion">
+<section class="headings_lists">
+<div class="head_reverse">
+  <p>My device</p>
+  <i class="fa-solid fa-arrows-rotate"></i>
+</div>
+
+
+<div class="dynamic_Bluetooth_names">
+
+<div class="bluetooth"
+  *ngFor="let device of mappedDevices"
+  (click)="openDevice(device)">
+
+<div class="icon_image_min">
+  <img [src]="getRoomIcon(device.room_name)" class="icon_image"/>
+  <div class="totalmin">
+    <p class="min_number">10</p>
+    <p class="min">Hrs</p>
+  </div>
+</div>
+
+<div class="bluetooth_name_toggle">
+  <p class="Bl_name">{{ device.room_name }}</p>
+  <p class="Bl_name small">{{ device.bluetooth_device_name }}</p>
+
+
+  <div class="toggle" (click)="togglePump($event, device)">
+      <div class="toggle-switch" [class.active]="device.isRunning">
+          <div class="switch-handle"></div>
+      </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+</section>
+</ion-content>

@@ -1,156 +1,95 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar class="headertoolbar">
-    <div class="header">
-      <i class="fa-solid fa-angle-left"></i>
-      <img
-        class="icons-image"
-        src="../../assets/mainimages/Tiara_black_logo.svg"
-        alt="Pending"
-      />
-      <div class="twoicons">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <i class="fa-solid fa-plus plusicon" (click)="scanDevices()"></i>
-      </div>
-    </div>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" class="homeion">
-  <section class="homescreen">
-    <ion-button expand="block" class="align-right" (click)="onprofile()">
-      <span class="button-text">My device</span>
-      <i class="fa-solid fa-angle-right"></i>
-    </ion-button>
-    <ion-button
-      expand="block"
-      class="align-right"
-      (click)="scanDevices()"
-      [disabled]="isScanning"
-    >
-      <span class="button-text">Available device</span>
-      <img
-        class="icons-image"
-        src="../../assets/mainimages/loading.svg"
-        alt="Pending"
-      />
-    </ion-button>
-
-    <div class="bluetoothlist" *ngIf="devices.length && !connected">
-      <div
-        class="list"
-        *ngFor="let device of devices"
-        (click)="connectToDevice(device)"
-      >
-        <i class="fa-brands fa-bluetooth-b"></i>
-        <p>{{ device.device.name || device.localName || 'Unnamed' }}</p>
-      </div>
-    </div> -->
-
-    <!-- (click)="scanDevices()" -->
-    <!-- <div
-      class="addbldiv"
-      *ngIf="!devices.length && showAddMessage"
-      (click)="scanDevices()"
-    >
-      <i class="fa-solid fa-plus plusicontwo"></i>
-      <p class="ADD">ADD</p>
-      <p class="nonedevice">you have not added any device</p>
-    </div> -->
-
-    <!-- Bluetooth Off Modal -->
-    <!-- <div class="bluetooth-modal" *ngIf="showBluetoothModal">
-      <div class="modal-box">
-        <h2>Bluetooth is Off</h2>
-        <p>Please enable Bluetooth to continue scanning devices.</p>
-        <div class="modal-buttons">
-          <button (click)="enableBluetooth()">Enable</button>
-          <button (click)="showBluetoothModal = false">Cancel</button>
-        </div>
-      </div>
-    </div>
-    <div *ngIf="isScanning" class="custom-spinner-wrapper">
-      <div class="loader"></div>
-      <p id="message-1">Searching</p>
-    </div>
-  </section>
-</ion-content> -->
-
-
-
 <!-- new -->
 <ion-header [translucent]="true">
-  <ion-toolbar class="headertoolbar">
-    <div class="header">
-      <div class="crossdiv">
-        <i class="fa-solid fa-xmark cross"></i>
-      </div>
-      <div class="addtext">
-        <p>Add a Diffuser</p>
-      </div>
-      <div class="blank">
-        <p></p>
-      </div>
+<ion-toolbar class="headertoolbar">
+  <div class="header">
+    <div class="crossdiv" (click)="onadddiffuser()">
+      <i class="fa-solid fa-xmark cross"></i>
     </div>
-  </ion-toolbar>
+    <div class="addtext">
+      <p>Add a Diffuser</p>
+    </div>
+    <div class="blank">
+      <p></p>
+    </div>
+  </div>
+</ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" class="homeion">
-  <section class="homescreen">
-      <div class="line"></div>
-    <ion-button expand="block" class="align-right" (click)="onprofile()">
-      <span class="button-text">My device</span>
-      <i class="fa-solid fa-angle-right"></i>
-    </ion-button>
-    <ion-button
-      expand="block"
-      class="align-right"
-      (click)="scanDevices()"
-      [disabled]="isScanning"
-    >
-      <span class="button-text">Available device</span>
-      <img
-        class="icons-image"
-        src="../../assets/mainimages/loading.svg"
-        alt="Pending"
-      />
-    </ion-button>
+<section class="homescreen">
+    <div class="line"></div>
+  <!-- <ion-button expand="block" class="align-right" (click)="onprofile()">
+    <span class="button-text">My device</span>
+    <i class="fa-solid fa-angle-right"></i>
+  </ion-button> -->
+  <p class="circulates">Diffuser Found Please select the diffuser you would like to set up.</p>
+  <ion-button
+    expand="block"
+    class="align-right"
+    (click)="scanDevices()"
+    [disabled]="isScanning"
+  >
+    <span class="button-text">Available device</span>
+    <img
+      class="icons-image"
+      src="../../assets/mainimages/loading.svg"
+      alt="Pending"
+    />
+  </ion-button>
 
-    <div class="bluetoothlist" *ngIf="devices.length && !connected">
-      <div
-        class="list"
-        *ngFor="let device of devices"
-        (click)="connectToDevice(device)"
-      >
-        <i class="fa-brands fa-bluetooth-b"></i>
-        <p>{{ device.device.name || device.localName || 'Unnamed' }}</p>
+  <!-- <div class="bluetoothlist" *ngIf="devices.length && !connected">
+    <div
+      class="list"
+      *ngFor="let device of devices"
+      (click)="connectToDevice(device)"
+    >
+      <i class="fa-brands fa-bluetooth-b"></i>
+      <p>{{ device.device.name || device.localName || 'Unnamed' }}</p>
+    </div>
+  </div> -->
+  <div class="bluetoothlist" *ngIf="devices.length && !connected">
+  <ng-container *ngFor="let device of devices">
+    <!-- Apply *ngIf here to filter the devices -->
+    <div
+      *ngIf="device.device.name && device.device.name.startsWith('Scent-')"
+      class="list"
+      (click)="connectToDevice(device)"
+    >
+      <i class="fa-brands fa-bluetooth-b"></i>
+      <p>{{ device.device.name || device.localName || 'Unnamed' }}</p>
+    </div>
+  </ng-container>
+</div>
+
+
+
+  
+
+  <!-- (click)="scanDevices()" -->
+  <!-- <div
+    class="addbldiv"
+    *ngIf="!devices.length && showAddMessage"
+    (click)="scanDevices()"
+  >
+    <i class="fa-solid fa-plus plusicontwo"></i>
+    <p class="ADD">ADD</p>
+    <p class="nonedevice">you have not added any device</p>
+  </div> -->
+
+  <!-- Bluetooth Off Modal -->
+  <div class="bluetooth-modal" *ngIf="showBluetoothModal">
+    <div class="modal-box">
+      <h2>Bluetooth is Off</h2>
+      <p>Please enable Bluetooth to continue scanning devices.</p>
+      <div class="modal-buttons">
+        <button (click)="enableBluetooth()">Enable</button>
+        <button (click)="showBluetoothModal = false">Cancel</button>
       </div>
     </div>
-
-    <!-- (click)="scanDevices()" -->
-    <!-- <div
-      class="addbldiv"
-      *ngIf="!devices.length && showAddMessage"
-      (click)="scanDevices()"
-    >
-      <i class="fa-solid fa-plus plusicontwo"></i>
-      <p class="ADD">ADD</p>
-      <p class="nonedevice">you have not added any device</p>
-    </div> -->
-
-    <!-- Bluetooth Off Modal -->
-    <div class="bluetooth-modal" *ngIf="showBluetoothModal">
-      <div class="modal-box">
-        <h2>Bluetooth is Off</h2>
-        <p>Please enable Bluetooth to continue scanning devices.</p>
-        <div class="modal-buttons">
-          <button (click)="enableBluetooth()">Enable</button>
-          <button (click)="showBluetoothModal = false">Cancel</button>
-        </div>
-      </div>
-    </div>
-    <div *ngIf="isScanning" class="custom-spinner-wrapper">
-      <div class="loader"></div>
-      <p id="message-1">Searching</p>
-    </div>
-  </section>
+  </div>
+  <div *ngIf="isScanning" class="custom-spinner-wrapper">
+    <div class="loader"></div>
+    <p id="message-1">Searching</p>
+  </div>
+</section>
 </ion-content> 

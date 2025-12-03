@@ -5,6 +5,7 @@ ion-header.md.header-md.header-translucent.header-collapse-none.header-transluce
 
 .headertoolbar {
   --background: #fdfbe4;
+  padding-top: 34px;
 }
 .header p {
   margin-bottom: 0px;
@@ -18,25 +19,25 @@ ion-header.md.header-md.header-translucent.header-collapse-none.header-transluce
   position: relative;
   text-align: center;
 }
-i.fa-solid.fa-angle-left {
-  color: #ffffff;
-  background: black;
-  width: 24px;
-  height: 24px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  position: absolute;
-  top: 5px;
+.back{
+    color: #000000;
+    background: #F1C27D;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 4px;
 }
 ion-content.md.content-ltr.hydrated {
   --background: black;
 }
 //header
 .profile_screen {
-  padding: 20px;
+      padding: 10px 20px 0px 20px;
 }
 
 .profileion {
@@ -62,14 +63,14 @@ p.mail {
 }
 
 .profileoptions {
-  background: #f1c27d;
-  padding: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  height: 60%;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+background: #f1c27d;
+    padding: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 54%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 .options {
   background: #fdfbe4;
@@ -94,4 +95,7 @@ p.optionstwo {
   color: black;
   position: absolute;
   right: 14px;
+}
+img.icons-image {
+    width: 32%;
 }

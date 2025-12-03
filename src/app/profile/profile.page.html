@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar class="headertoolbar">
     <div class="header">
       <i class="fa-solid fa-angle-left"></i>
@@ -8,6 +8,15 @@
         alt="Pending"
       />
       <p>Cancel</p>
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header [translucent]="true">
+  <ion-toolbar class="headertoolbar">
+    <div class="header">
+      <i class="fa-solid fa-angle-left back" (click)="onbluetoothlists()"></i>
+      <img class="icons-image" src="../../assets/mainimages/Tiara_logo.png" />
+      <p></p>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -21,7 +30,7 @@
         alt="Pending"
       />
       <p class="name">Marie T wiedman</p>
-      <p class="mail">Mariegmail.com</p>
+<p class="mail">{{ user_email }}</p>
     </div>
   </section>
 
@@ -29,7 +38,7 @@
     <div class="options" (click)="onEditProfile()">
       <img
         class="optionsone"
-        src="../../assets/mainimages/Vector.svg"
+        src="../../assets/icon/user_icon.png"
         alt="Pending"
       />
       <p class="optionstwo">User Profile</p>
@@ -38,7 +47,7 @@
     <div class="options" (click)="onChangePassword()">
       <img
         class="optionsone"
-        src="../../assets/mainimages/change_psd.svg"
+        src="../../assets/icon/key.png"
         alt="Pending"
       />
       <p class="optionstwo">Change Password</p>
@@ -47,7 +56,7 @@
     <div class="options">
       <img
         class="optionsone"
-        src="../../assets/mainimages/Group 66.svg"
+        src="../../assets/icon/bell.png"
         alt="Pending"
       />
       <p class="optionstwo">Push Notifications</p>
@@ -56,7 +65,7 @@
     <div class="options" (click)="onDeleteAcoount()">
       <img
         class="optionsone"
-        src="../../assets/mainimages/change_psd.svg"
+        src="../../assets/icon/delete.png"
         alt="Pending"
       />
       <p class="optionstwo">Delete Account</p>
@@ -65,7 +74,7 @@
     <div class="options">
       <img
         class="optionsone"
-        src="../../assets/mainimages/Group 66.svg"
+        src="../../assets/icon/logout.png"
         alt="Pending"
       />
       <p class="optionstwo">Logout</p>
