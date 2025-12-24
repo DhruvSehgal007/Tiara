@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class AuthserviceService {
-  // private baseUrl = 'http://localhost:3000/api/auth';
+  // private baseUrl = 'http://localhost:5000/api';
   private baseUrl = 'https://staging.ekarigar.com/tiaraapi/api';
 
   constructor(private http: HttpClient) {
